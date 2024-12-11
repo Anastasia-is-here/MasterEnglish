@@ -7,6 +7,7 @@
     android:background="@color/lightGreen">
 
     <ImageView
+        android:id="@+id/bookIcon"
         android:layout_width="157dp"
         android:layout_height="112dp"
         android:src="@drawable/book_icon"
@@ -15,4 +16,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/russo_one"
+        android:textColor="#F1F1F1"
+        android:textSize="26sp"
+        android:text="@string/masterenglish"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
