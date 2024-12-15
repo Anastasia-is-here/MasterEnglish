@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -15,6 +16,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -37,6 +42,11 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.glide)
+    implementation(libs.bom)
+    implementation(libs.supabase.postgrest.kt)
+    implementation(libs.ktor.client.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

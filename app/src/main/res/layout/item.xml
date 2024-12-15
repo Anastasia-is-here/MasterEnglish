@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:background="@drawable/button"
+    android:backgroundTint="@color/wheat">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/school_icon"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_marginStart="5dp"
+        android:layout_width="3dp"
+        android:layout_height="45dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/green" />
+
+    <TextView
+        android:id="@+id/chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+
+        android:textColor="@color/darkGreen"
+        android:fontFamily="@font/russo_one"
+        android:text="@string/article"
+        android:textSize="30sp" />
+
+</LinearLayout>
