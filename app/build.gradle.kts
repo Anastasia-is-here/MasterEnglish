@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.masterenglish"
-        minSdk = 24
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -19,6 +19,7 @@ android {
     }
 
     buildFeatures {
+        
         viewBinding = true
     }
 
@@ -42,6 +43,7 @@ android {
 
 dependencies {
 
+    implementation(libs.repo)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.glide)
     implementation(libs.bom)
