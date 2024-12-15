@@ -1,7 +1,9 @@
 package com.example.masterenglish.Recycler
 
 import android.R
+import android.content.Context
 import android.content.Intent
+import android.os.IInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,15 +12,19 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.masterenglish.databinding.ItemBinding
 import java.io.Reader
+import com.example.masterenglish.ItemClickListener
 
-class ArticleAdapter(private val objects : ArrayList<Model>) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>(){
+
+class ArticleAdapter(private val objects : ArrayList<Model>, val listener : ItemClickListener ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>(){
 
     inner class  ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(position: Int) = with(binding){
 
             binding.root.setOnClickListener{
-                //startActivity(Intent(context, Reader::class.java).putExtra(“file”, data.link))
+                listener.clickListen(
+                    chapter = objects[position]
+                )
             }
 
             val data = objects[position]

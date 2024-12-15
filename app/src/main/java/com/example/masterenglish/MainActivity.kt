@@ -1,8 +1,12 @@
 package com.example.masterenglish
 
+import com.example.masterenglish.ItemClickListener
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.masterenglish.Recycler.ArticleAdapter
@@ -14,9 +18,10 @@ import io.github.jan.supabase.postgrest.from
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.Reader
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemClickListener{
     lateinit var binding : ActivityMainBinding
     val supabase = createSupabaseClient(
         supabaseUrl = "https://dofcnsnrucyhqwrwwfto.supabase.co",
@@ -25,27 +30,31 @@ class MainActivity : AppCompatActivity() {
         install(Postgrest)
     }
 
+    override fun clickListen(chapter: Model) {
+        startActivity(
+            Intent(
+                this,
+                ReadActivity::class.java
+            ).putExtra("pdfLink", chapter.pdfLink))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-
         binding.rcv.layoutManager = LinearLayoutManager(this)
-
-
-            LoadData()
-
+        LoadData()
     }
 
     private fun LoadData() {
 
         lifecycleScope.launch(Dispatchers.IO) {
-            var countries = supabase.from("Data")
+            var chapters = supabase.from("Data")
                 .select().decodeList<Model>()
 
             withContext(Dispatchers.Main){
-                binding.rcv.adapter = ArticleAdapter(countries as ArrayList<Model>)
+                binding.rcv.adapter = ArticleAdapter(chapters as ArrayList<Model>, listener = this@MainActivity)
             }
         }
     }

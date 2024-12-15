@@ -4,8 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Model (
-    val id : String,
+    val id : Int,
     val chapter : String,
-    val img : String,
     val pdfLink : String
 )

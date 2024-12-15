@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.masterenglish"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.masterenglish"
         minSdk = 31
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -43,10 +43,10 @@ android {
 
 dependencies {
 
-    implementation(libs.repo)
+
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.glide)
-    implementation(libs.bom)
+    implementation(platform(libs.bom))
     implementation(libs.supabase.postgrest.kt)
     implementation(libs.ktor.client.android)
     implementation(libs.androidx.core.ktx)
