@@ -29,5 +29,11 @@ class ReadActivity : AppCompatActivity() {
         binding.pdf.settings.builtInZoomControls = true
         binding.pdf.settings.displayZoomControls = false
         binding.pdf.settings.javaScriptEnabled = true
+
+        binding.backBtn.setOnClickListener{
+            finish()
+        }
+
+        binding.title.text = intent.getStringExtra("chapter")
     }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MasterEnglish</string>
     <string name="article">Article</string>
+    <string name="chapterText">Глава</string>
 </resources>

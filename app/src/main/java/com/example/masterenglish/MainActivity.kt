@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), ItemClickListener{
             Intent(
                 this,
                 ReadActivity::class.java
-            ).putExtra("pdfLink", chapter.pdfLink))
+            ).putExtra("pdfLink", chapter.pdfLink).putExtra("chapter", chapter.chapter))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
