@@ -1,12 +1,8 @@
 package com.example.masterenglish
 
-import com.example.masterenglish.ItemClickListener
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.masterenglish.Recycler.ArticleAdapter
@@ -18,7 +14,6 @@ import io.github.jan.supabase.postgrest.from
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.Reader
 
 
 class MainActivity : AppCompatActivity(), ItemClickListener{
@@ -40,17 +35,17 @@ class MainActivity : AppCompatActivity(), ItemClickListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
         setContentView(binding.root)
         binding.rcv.layoutManager = LinearLayoutManager(this)
 
-//        binding.menuBtn.setOnClickListener{
-//            startActivity(Intent(
-//                this,
-//
-//            ))
-//        }
+        binding.menuBtn.setOnClickListener{
+            startActivity(Intent(
+                this,
+                AppInfoActivity::class.java
+            ))
+        }
 
         LoadData()
     }

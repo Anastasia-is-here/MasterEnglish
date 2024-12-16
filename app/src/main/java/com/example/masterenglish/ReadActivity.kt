@@ -1,20 +1,19 @@
 package com.example.masterenglish
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
+import android.webkit.WebSettings
 import android.webkit.WebViewClient
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.masterenglish.databinding.ActivityMainBinding
 import com.example.masterenglish.databinding.ActivityReadBinding
 
 class ReadActivity : AppCompatActivity() {
     lateinit var binding : ActivityReadBinding
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityReadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -35,5 +34,8 @@ class ReadActivity : AppCompatActivity() {
         }
 
         binding.title.text = intent.getStringExtra("chapter")
+
+        binding.pdf.setLayerType(View.LAYER_TYPE_HARDWARE, null)
+        binding.pdf.settings.cacheMode = WebSettings.LOAD_NO_CACHE
     }
 }

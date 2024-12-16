@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/darkGreen"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:paddingTop="?actionBarSize">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:fontFamily="@font/russo_one"
+            android:fontFamily="@font/russo_one_font"
             android:gravity="center"
             android:text="@string/masterenglish"
             android:textColor="#F1F1F1"
@@ -32,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:contentDescription="@string/menu_icon"
             android:src="@drawable/menu_dots"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

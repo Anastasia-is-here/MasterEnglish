@@ -3,4 +3,19 @@
     <string name="article">Article</string>
     <string name="chapterText">Глава</string>
     <string name="masterenglish">MasterEnglish</string>
+    <string name="developer">Разработчик</string>
+    <string name="fio">Долинская Анастасия Сергеевна</string>
+    <string name="version">Версия</string>
+    <string name="_1_0">1.0</string>
+    <string name="thanks">Благодарности</string>
+    <string name="mariaThx"><font fgcolor='#F1F1F1'>Киюк Мария Валерьевна</font>, за помощь с учебными материалами</string>
+    <string name="pavelThx"><font fgcolor='#F1F1F1'>Кирюхин Павел Юрьевич</font>, за консультации по практической части</string>
+    <string name="lizaThx"><font fgcolor='#F1F1F1'>Антипова Елизавета Сергеевна</font>, за теоретические рекомендации</string>
+    <string name="ViktThx"><font fgcolor='#F1F1F1'>Долинская Виктория Александровна</font>, за обратную связь по дизайну</string>
+    <string name="textbook">Учебник</string>
+    <string name="txtbook">Phrasal verbs in context (Peter Dainty)</string>
+    <string name="back">back</string>
+    <string name="article_icon">article icon</string>
+    <string name="app_icon">app icon</string>
+    <string name="menu_icon">menu icon</string>
 </resources>

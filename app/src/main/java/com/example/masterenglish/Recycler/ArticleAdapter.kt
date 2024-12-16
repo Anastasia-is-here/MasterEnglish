@@ -1,18 +1,11 @@
 package com.example.masterenglish.Recycler
 
-import android.R
-import android.content.Context
-import android.content.Intent
-import android.os.IInterface
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.masterenglish.databinding.ItemBinding
-import java.io.Reader
 import com.example.masterenglish.ItemClickListener
+import com.example.masterenglish.margin
 
 
 class ArticleAdapter(private val objects : ArrayList<Model>, val listener : ItemClickListener ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>(){
@@ -20,6 +13,8 @@ class ArticleAdapter(private val objects : ArrayList<Model>, val listener : Item
     inner class  ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(position: Int) = with(binding){
+
+            binding.root.margin(top = if(position == 0) 0f else 7f)
 
             binding.root.setOnClickListener{
                 listener.clickListen(
@@ -35,11 +30,11 @@ class ArticleAdapter(private val objects : ArrayList<Model>, val listener : Item
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ArticleAdapter.ViewHolder {
+    ): ViewHolder {
         return ViewHolder(ItemBinding.inflate((LayoutInflater.from(parent.context)), parent, false))
     }
 
-    override fun onBindViewHolder(holder: ArticleAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(position)
     }
 
