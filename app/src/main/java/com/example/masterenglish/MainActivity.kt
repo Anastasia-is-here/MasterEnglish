@@ -44,6 +44,14 @@ class MainActivity : AppCompatActivity(), ItemClickListener{
         enableEdgeToEdge()
         setContentView(binding.root)
         binding.rcv.layoutManager = LinearLayoutManager(this)
+
+//        binding.menuBtn.setOnClickListener{
+//            startActivity(Intent(
+//                this,
+//
+//            ))
+//        }
+
         LoadData()
     }
 
